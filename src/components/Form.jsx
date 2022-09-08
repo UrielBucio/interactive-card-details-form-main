@@ -11,14 +11,17 @@ const Form = () => {
         <div className='details'>
           <div className='date'>
             <label htmlFor='date'>Exp. Date (MM/YY)</label>
-            <input type='number' name='month' placeholder='MM'/>
-            <input type='number' name='year' placeholder='YY'/>
+            <div className='date-input'>
+              <input type='number' name='month' placeholder='MM'/>
+              <input type='number' name='year' placeholder='YY'/>
+            </div>
           </div>
           <div className='cvc-input'>
             <label htmlFor='card_number'>CVC</label>
             <input type='number' name='card_number' placeholder='e.g. 123'/>
           </div>
         </div>
+        <input type='submit' value='Confirm' className='btn' />
       </form>
     </div>
   )
