@@ -13,8 +13,129 @@
   padding: 0;
 }
 body {
+  background-color: var(--White);
   font-family: 'Space Grotesk', sans-serif;
   font-size: 18px;
 }
-.attribution { font-size: 11px; text-align: center; }
-.attribution a { color: hsl(228, 45%, 44%); }
+.main-container {
+  align-items: center;
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 350px;
+  min-height: 900px;
+  width: 100%;
+}
+.card-container {
+  background-image: url('../assets/img/bg-main-desktop.png');
+  background-repeat: no-repeat;
+  color: var(--White);
+  min-height: 900px;
+  position: relative;
+  width: 33.542%;
+}
+.front-card, .back-card {
+  background-repeat: no-repeat;
+  padding: 30px;
+  position: absolute;
+  height: 245px;
+  width: 447px;
+}
+.front-card {
+  background-image: url('../assets/img/bg-card-front.png');
+  left: 34%;
+  top: 20.5%;
+}
+.logo-card {
+  background-image: url('../assets/img/card-logo.svg');
+  height: 47px;
+  margin-bottom: 65px;
+  width: 84px;
+}
+.content-card h5{
+  font-size: 1.6rem;
+  font-weight: 500;
+  letter-spacing: 5px;
+  width: 100%;
+}
+.description {
+  align-items: center;
+  display: flex;
+  font-size: 0.9rem;
+  justify-content: space-between;
+  letter-spacing: 2px;
+  margin-top: 30px;
+  text-transform: uppercase;
+  width: 100%;
+}
+.back-card {
+  background-image: url('../assets/img/bg-card-back.png');
+  bottom: 20.5%;
+  left: 53%;
+}
+.cvc {
+  font-size: 0.9rem;
+  position: absolute;
+  letter-spacing: 2px;
+  right: 12%;
+  top: 45%;
+}
+.form-container {
+  width: 26.6%;
+}
+.form-data {
+  display: flex;
+  flex-flow: column;
+  width: 100%;
+}
+.form-data label, .date label {
+  color: var(--VeryDarkViolet);
+  font-size: 0.8rem;
+  letter-spacing: 1.5px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+.form-data input[type="text"],.form-data input[type="number"]  {
+  border: 2px solid var(--LightGrayishViolet);
+  border-radius: 10px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.125rem;
+  letter-spacing: 1px;
+  margin-bottom: 25px;
+  padding: 10px;
+  width: 100%;
+}
+.form-data input[type="text"]:hover,.form-data input[type="number"]:hover {
+  cursor: pointer;
+  border-color: var(--VeryDarkViolet);
+}
+.details {
+  display: flex;
+  gap: 20px;
+}
+.date, .cvc-input, .date-input input  {
+  width: 50%;
+}
+.date-input {
+  display: flex;
+  gap: 10px;
+}
+.btn {
+  background-color: var(--VeryDarkViolet);
+  border: 1px solid var(--LightGrayishViolet);
+  border-radius: 10px;
+  color: var(--White);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.2rem;
+  margin-top: 10px;
+  padding: 15px;
+}
+.btn:hover {
+  cursor: pointer;
+}
+.attribution { 
+  font-size: 11px; 
+  text-align: center; 
+}
+.attribution a { 
+  color: hsl(228, 45%, 44%); 
+}
