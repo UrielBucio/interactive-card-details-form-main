@@ -28,6 +28,7 @@ body {
 .card-container {
   background-image: url('../assets/img/bg-main-desktop.png');
   background-repeat: no-repeat;
+  background-size: cover;
   color: var(--White);
   min-height: 900px;
   position: relative;
@@ -47,9 +48,10 @@ body {
 }
 .logo-card {
   background-image: url('../assets/img/card-logo.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
   height: 47px;
   margin-bottom: 65px;
-  width: 84px;
 }
 .content-card h5{
   font-size: 1.6rem;
@@ -138,4 +140,49 @@ body {
 }
 .attribution a { 
   color: hsl(228, 45%, 44%); 
+}
+/* Mobile Design */
+@media screen and (max-width:768px) {
+  .main-container {
+    flex-direction: column;
+    gap: 90px;
+    min-height: 704px;
+  }
+  .card-container {
+    background-image: url('../assets/img/bg-main-mobile.png');
+    min-height: 240px;
+    width: 100%;
+  }
+  .front-card, .back-card {
+    background-size: contain;
+    height: 160px;
+    padding: 20px;
+    width: 285px;
+  }
+  .front-card {
+    top: 52%;
+    left: 15px;
+  }
+  .logo-card {
+    height: 30px;
+    margin-bottom: 35px;
+  }
+  .content-card h5 {
+    font-size: 1.1rem;
+    letter-spacing: 2.5px;
+  }
+  .description {
+    margin-top: 20px;
+    font-size: 0.5rem;
+  }
+  .back-card {
+    top: 13%;
+    left: 20%;
+  }
+  .cvc {
+    font-size: 0.5rem;
+  }
+  .form-container {
+    width: 90%;
+  }
 }
