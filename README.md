@@ -40,6 +40,7 @@ Users should be able to:
 - CSS custom properties
 - Flexbox
 - [React](https://reactjs.org/) - JS library
+- [Vite](https://vitejs.dev/)
 
 ## Author
 
