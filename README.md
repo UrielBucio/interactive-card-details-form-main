@@ -1,5 +1,5 @@
 
-![](./src/assets/img/screenshot.jpg)
+![](./img/screenshot.jpg)
 
 # Frontend Mentor - Interactive card details form solution
 
