@@ -110,6 +110,15 @@ body {
   cursor: pointer;
   border-color: var(--VeryDarkViolet);
 }
+.error-input {
+  border-color: var(--RedErrors);
+  margin-bottom: 10px;
+}
+.msg-error {
+  color: var(--RedErrors);
+  font-size: 0.85rem;
+  margin-bottom: 20px;
+}
 .details {
   display: flex;
   gap: 20px;
@@ -121,7 +130,7 @@ body {
   display: flex;
   gap: 10px;
 }
-.btn {
+.btn, .btn-complete {
   background-color: var(--VeryDarkViolet);
   border: 1px solid var(--LightGrayishViolet);
   border-radius: 10px;
@@ -131,8 +140,35 @@ body {
   margin-top: 10px;
   padding: 15px;
 }
-.btn:hover {
+.btn:hover, .btn-complete:hover {
   cursor: pointer;
+}
+.complete-container {
+  align-items: center;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 40px;
+  justify-content: center;
+  text-align: center;
+}
+.logo-complete {
+  background-image: url('../assets/img/icon-complete.svg');
+  background-size: contain;
+  height: 80px;
+  width: 80px;
+}
+.thank-text h1{
+  color: var(--VeryDarkViolet);
+  font-size: 1.8rem;
+  letter-spacing: 5px;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+}
+.thank-text p {
+  color: var(--DarkGrayishViolet);
+}
+.btn-complete {
+  width: 100%;
 }
 .attribution { 
   font-size: 11px; 
