@@ -4,11 +4,11 @@ const Form = ({ setCardForm, setComplete }) => {
   const [cardData, setCardData] = useState({});
   const regExp = /[A-z]/g;
 
-  const validateName = cardData && cardData.name !== '' && true;
-  const validate = cardData.card_number && regExp.test(cardData.card_number);
+  const validateName = cardData.name !== '' && true;
+  const validate = regExp.test(cardData.card_number);
   const validateMonth = cardData.month < 1 || cardData.month > 12 && true;
   const validateYear = cardData.year < 22 || cardData.year > 27  && true;
-  const validateCVC = cardData.cvc && cardData.cvc.length !== 3 && true;
+  const validateCVC = cardData.cvc ? cardData.cvc.length !== 3 && true : false;
 
   useEffect(() => {
     setCardForm(cardData);
@@ -20,7 +20,10 @@ const Form = ({ setCardForm, setComplete }) => {
 
   const onSubmit = (event) => {
     event.preventDefault();
-    validateName && !validate && !validateMonth && !validateYear && !validateCVC && setComplete(true);
+    console.log(validateName, validate, validateMonth, validateYear, validateCVC);
+    if (validateName && !validate && !validateMonth && !validateYear && !validateCVC) {
+      setComplete(true);
+    }
   };
   
   return (
@@ -30,8 +33,8 @@ const Form = ({ setCardForm, setComplete }) => {
         <input type='text' name='name' className={ !validateName ? 'input error-input' : 'input'} placeholder='e.g. Jane Appleseed' onChange={handleInput}/>
         { !validateName && <span className='msg-error'>Can't be blank</span> }
         <label htmlFor='card_number'>Card Number</label>
-        <input type='text' name='card_number' className={ validate ? 'input error-input' : 'input'} value={cardData.card_number && !validate ? cardData.card_number.replace(/\s/g, '').replace(/([0-9]{4})/g, '$1 ').trim(): cardData.card_number} placeholder='e.g. 1234 5678 9123 0000' maxLength='19' onChange={handleInput}/>
-        { validate && <span className='msg-error'>Wrong format, numbers only</span>}
+        <input type='text' name='card_number' className={ cardData.card_number && validate ? 'input error-input' : 'input'} value={cardData.card_number && !validate ? cardData.card_number.replace(/\s/g, '').replace(/([0-9]{4})/g, '$1 ').trim(): cardData.card_number} placeholder='e.g. 1234 5678 9123 0000' maxLength='19' onChange={handleInput}/>
+        { cardData.card_number && validate && <span className='msg-error'>Wrong format, numbers only</span>}
         <div className='details'>
           <div className='date'>
             <label htmlFor='date'>Exp. Date (MM/YY)</label> 
